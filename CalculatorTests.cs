@@ -29,7 +29,6 @@ namespace NUnitTest
         }
 
         [Test]
-
         [Retry(2)]
         public void TestSum()
         {
@@ -39,7 +38,6 @@ namespace NUnitTest
         }
 
         [Test, Description("Test substraction int from double and rounding up result to 3 decimal places")]
-
         [Retry(3)]
         public void TestSubtraction()
         {
@@ -49,7 +47,6 @@ namespace NUnitTest
         }
 
         [Test]
-
         [Retry(1)]
         public void TestMultipication(
             [Values(0, 9, 1)] int operand1,
