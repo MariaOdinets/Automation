@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NUnitTest
+namespace NUnitTest.L15_HW_Calculator
 {
     internal class CalculatorTests
     {
@@ -60,7 +60,7 @@ namespace NUnitTest
         }
 
         [Test]
-        [TestCase(10,2)]
+        [TestCase(10, 2)]
         [Retry(3)]
         public void TestDivision(
             [Values(0, 100, 1)] int operand1,

@@ -1,3 +1,5 @@
+using NUnitTest.L15_HW_Calculator;
+
 namespace NUnitTest
 {
     public class Tests
@@ -17,7 +19,6 @@ namespace NUnitTest
         {
             randomInt = new Random().Next(0, 15);
         }
-
 
         [Test]
         public void IsOdd()
