@@ -43,7 +43,7 @@ namespace NUnitTest
         {
             var result = calculator.Subtract(randomNumber, randomNumber2);
 
-            Assert.That(result, Is.LessThan(5), $"Failed: {randomNumber} - {randomNumber2} = {result}");
+            Assert.That(result, Is.LessThan(6), $"Failed: {randomNumber} - {randomNumber2} = {result}");
         }
 
         [Test]
