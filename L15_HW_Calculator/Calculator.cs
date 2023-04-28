@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NUnitTest
+namespace NUnitTest.L15_HW_Calculator
 {
     public class Calculator
     {
