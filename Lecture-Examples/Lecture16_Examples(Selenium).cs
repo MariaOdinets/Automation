@@ -15,7 +15,6 @@ namespace NUnitTest
         WebDriver ChromeDriver { get; set; }
 
         [SetUp]
-
         public void Setup()
         {
             ChromeDriver = new ChromeDriver();
