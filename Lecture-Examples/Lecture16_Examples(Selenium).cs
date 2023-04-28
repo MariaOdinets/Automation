@@ -55,15 +55,3 @@ namespace NUnitTest
         }
     }
 }
-
-//ChromeDriver.FindElement(By.TagName("input")).Click();
-//IWebElement checkbox = ChromeDriver.FindElement(By.TagName("input"));
-//checkbox.Click();
-
-//Assert.IsNotNull(checkAttribute);
-//Assert.IsTrue(checkbox.Selected);
-
-//IWebElement checkbox = ChromeDriver.FindElement(By.CssSelector("[type=checkbox]"));
-
-//WebDriver chrome = new ChromeDriver();
-//WebDriver opera = new FirefoxDriver();

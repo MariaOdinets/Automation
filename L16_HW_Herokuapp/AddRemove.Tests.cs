@@ -19,13 +19,12 @@ namespace NUnitTest.L16_HW_Herokuapp
         }
 
         [Test]
-
         public void AddElements()
         {           
             var addButton = ChromeDriver.FindElement(By.XPath("//button[text()='Add Element']"));
 
             addButton.Click();
-            addButton.Click();            
+            addButton.Click();     
         }
 
         [Test]
