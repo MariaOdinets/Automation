@@ -8,20 +8,18 @@ using OpenQA.Selenium.Chrome;
 
 namespace NUnitTest.L16_HW_Herokuapp
 {
-    public class Checkboxes : AbstractSetUp
+    public class Checkboxes : BaseTest
     {
-        WebDriver ChromeDriver = new ChromeDriver();
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp ()
+        [SetUp]
+        public void SetUp ()
         {
-            ChromeDriver.Navigate().GoToUrl("https://the-internet.herokuapp.com/checkboxes");
+            Driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/checkboxes");
         }
 
         [Test]
-        public void CheckboxCondition() { 
-        
-            IList<IWebElement> checkboxes = ChromeDriver.FindElements(By.CssSelector("[type=checkbox]"));
+        public void CheckboxCondition() 
+        {         
+            IList<IWebElement> checkboxes = Driver.FindElements(By.CssSelector("[type=checkbox]"));
 
             Assert.That(!checkboxes[0].Selected);
             checkboxes[0].Click();

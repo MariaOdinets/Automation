@@ -47,7 +47,6 @@ namespace NUnitTest
         }
 
         [TearDown]
-
         public void TearDown()
         {
             ChromeDriver.Quit();

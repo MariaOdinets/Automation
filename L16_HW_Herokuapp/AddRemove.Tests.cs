@@ -8,20 +8,18 @@ using System.Threading.Tasks;
 
 namespace NUnitTest.L16_HW_Herokuapp
 {
-    internal class AddRemove 
+    internal class AddRemove : BaseTest
     {
-        WebDriver ChromeDriver = new ChromeDriver();
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
+        [SetUp]
+        public void SetUp()
         {
-            ChromeDriver.Navigate().GoToUrl("https://the-internet.herokuapp.com/add_remove_elements/");
+            Driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/add_remove_elements/");
         }
 
         [Test]
         public void AddElements()
         {           
-            var addButton = ChromeDriver.FindElement(By.XPath("//button[text()='Add Element']"));
+            var addButton = Driver.FindElement(By.XPath("//button[text()='Add Element']"));
 
             addButton.Click();
             addButton.Click();     
@@ -30,13 +28,13 @@ namespace NUnitTest.L16_HW_Herokuapp
         [Test]
         public void RemoveElements()
         {
-            ChromeDriver.FindElement(By.XPath("//button[text()='Delete']")).Click();
+            Driver.FindElement(By.XPath("//button[text()='Delete']")).Click();
         }
 
         [Test]
         public void CheckNumberOfElements() 
         {
-            var listElements = ChromeDriver.FindElements(By.TagName("button"));
+            var listElements = Driver.FindElements(By.TagName("button"));
             Console.WriteLine(listElements.Count());
 
             Assert.That(listElements.Equals(2));
