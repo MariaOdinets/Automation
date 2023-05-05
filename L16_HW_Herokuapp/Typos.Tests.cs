@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,13 @@ namespace NUnitTest.L16_HW_Herokuapp
 
         [Test]
         public void TyposTest() 
-        { 
-        
+        {
+            IList<IWebElement> paragraphs = Driver.FindElements(By.TagName("p"));
+
+            var text = paragraphs[1].GetAttribute("outerText");
+            string expectedText = "Sometimes you'll see a typo, other times you won't.";
+
+            Assert.That(text, Is.EqualTo(expectedText));
         }
     }
 }

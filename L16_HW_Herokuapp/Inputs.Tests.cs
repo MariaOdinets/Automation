@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +17,27 @@ namespace NUnitTest.L16_HW_Herokuapp
         }
 
         [Test]
-        public void InputsTest()
+        public void InputsTestNumbers()
         {
+            IWebElement input = Driver.FindElement(By.TagName("input"));            
+            input.Click();
 
+            input.SendKeys(Keys.ArrowUp + Keys.ArrowDown);
+            var text = input.GetAttribute("value");
+
+            Assert.That(text, !Is.Empty);
+        }
+
+        [Test]
+        public void InputsTestLetters() 
+        {
+            IWebElement input = Driver.FindElement(By.TagName("input"));
+            input.Click();
+
+            input.SendKeys("any text !@#%^*^%");
+            var text = input.GetAttribute("value");
+
+            Assert.That(text, Is.Empty);
         }
     }
 }

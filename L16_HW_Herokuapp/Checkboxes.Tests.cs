@@ -11,7 +11,7 @@ namespace NUnitTest.L16_HW_Herokuapp
     public class Checkboxes : BaseTest
     {
         [SetUp]
-        public void SetUp ()
+        public void SetUp()
         {
             Driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/checkboxes");
         }
