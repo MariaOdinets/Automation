@@ -21,10 +21,10 @@ namespace NUnitTest.Sharelane_Automation
             Driver.Navigate().GoToUrl("https://www.sharelane.com/");
         }
 
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    Driver.Quit();
-        //}
+        [TearDown]
+        public void TearDown()
+        {
+            Driver.Quit();
+        }
     }
 }

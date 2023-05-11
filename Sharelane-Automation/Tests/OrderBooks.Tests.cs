@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace NUnitTest.Sharelane_Automation
 {
-    public class Search
+    public class OrderBooks
     {
         [Test]
-        public void SearchPositive() 
-        { 
+        public void OrderBooksPositive()
+        {
             
         }
     }
