@@ -15,7 +15,20 @@ namespace NUnitTest.Sharelane_Automation
         [SetUp]
         public void SetUp()
         {
-            Driver = new ChromeDriver();
+            string browser = TestContext.Parameters.Get("Browser");
+
+            switch(browser)
+            {
+                case "headless":
+                    ChromeOptions options = new ChromeOptions();
+                    options.AddArgument("--headless");
+                    Driver = new ChromeDriver(options);
+                    break;
+                default:
+                    Driver = new ChromeDriver();
+                    break;
+            }
+
             Driver.Manage().Window.Maximize();
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             Driver.Navigate().GoToUrl("https://www.sharelane.com/");

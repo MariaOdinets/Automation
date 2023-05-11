@@ -18,7 +18,7 @@ namespace NUnitTest.Sharelane_Automation.Tests
         {
             Driver.Navigate().GoToUrl("https://www.sharelane.com/cgi-bin/main.py");
             MainPage = new MainPage(Driver);
-            SignUpPage= new SignUpPage(Driver);
+            SignUpPage = new SignUpPage(Driver);
             MainPage.ClickSignUpButton();
         }
 
