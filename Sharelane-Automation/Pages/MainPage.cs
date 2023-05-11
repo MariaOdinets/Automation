@@ -17,6 +17,8 @@ namespace NUnitTest.Sharelane_Automation.Pages
         By LoginButtonLocator = By.XPath("//*[@value = 'Login']");
         By SearchInput = By.XPath("//*[@name = 'keyword']");
         By SearchButton = By.XPath("//*[@value = 'Search']");
+        By ErrorMessage = By.CssSelector(".error_message");
+        By SignUpButton = By.XPath("//a[contains(@href, 'register')]");
 
         public void EnterEmail(string email)
         {
@@ -40,6 +42,16 @@ namespace NUnitTest.Sharelane_Automation.Pages
         public void EnterSearchKeyphrase(string searchKeyphrase) 
         {
             Driver.FindElement(SearchInput).SendKeys(searchKeyphrase);
+        }
+
+        public bool IsErrorMessageDisplayed()
+        {
+            return Driver.FindElement(ErrorMessage).Displayed;
+        }
+
+        public void ClickSignUpButton()
+        {
+            Driver.FindElement(SignUpButton).Click();
         }
 
         public void Login(string email, string password)

@@ -14,10 +14,16 @@ namespace NUnitTest.Sharelane_Automation.Pages
 
         By AddToCartButton = By.XPath("//a[contains(@href, 'add_to_cart.py?book_id=')]");
         By ConfirmationMessage = By.CssSelector(".confirmation_message");
+        By ErrorMessage = By.CssSelector(".error_message");
 
         public void ClickAddToCartButton()
         {
             Driver.FindElement(AddToCartButton).Click();
+        }
+
+        public bool IsErrorMessageDisplayed()
+        {
+            return Driver.FindElement(ErrorMessage).Displayed;
         }
     }
 }

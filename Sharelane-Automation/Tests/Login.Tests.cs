@@ -16,7 +16,7 @@ namespace NUnitTest.Sharelane_Automation
         public void SetUpLocal()
         {
             Driver.Navigate().GoToUrl("https://www.sharelane.com/cgi-bin/main.py");
-            MainPage = new MainPage(Driver);
+            MainPage = new MainPage(Driver);            
         }
 
         [Test]
@@ -26,10 +26,8 @@ namespace NUnitTest.Sharelane_Automation
             string password = "password";
 
             MainPage.Login(email, password);
-
-            var errorMessage = Driver.FindElement(By.CssSelector(".error_message"));
-
-            Assert.That(errorMessage.Displayed);
+            
+            Assert.That(MainPage.IsErrorMessageDisplayed());
         }
 
         [Test]
@@ -37,9 +35,7 @@ namespace NUnitTest.Sharelane_Automation
         {
             MainPage.Login("", "");
 
-            var errorMessage = Driver.FindElement(By.CssSelector(".error_message"));
-
-            Assert.That(errorMessage.Displayed);
+            Assert.That(MainPage.IsErrorMessageDisplayed());
         }
     }
 }
