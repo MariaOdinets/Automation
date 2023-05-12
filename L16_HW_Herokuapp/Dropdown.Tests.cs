@@ -3,17 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace NUnitTest.L16_HW_Herokuapp
 {
-    internal class Dropdown : AbstractSetUp
+    internal class Dropdown : BaseTest
     {
-        WebDriver ChromeDriver = new ChromeDriver();
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
+        [SetUp]
+        public void SetUp()
         {
-            ChromeDriver.Navigate().GoToUrl("https://the-internet.herokuapp.com/dropdown");
+            Driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/dropdown");
+        }
+
+        [Test]
+        public void DropdownCheck() 
+        {
+            var dropdown = Driver.FindElement(By.Id("dropdown"));
+            var elements = dropdown.FindElements(By.TagName("option"));
+
+            Assert.That(elements.Count > 0);
+            
+            foreach (var element in elements) 
+            {
+                if (element.Enabled)
+                {
+                    element.Click();
+                    Assert.That(element.Selected);
+                }               
+            }
         }
     }
 }
